@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{995A0DB1-4AF7-4BF1-94D2-1E60A1319301}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LegoTrainProject</RootNamespace>
+    <AssemblyName>LegoTrainProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformVersion>10.0</TargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastColoredTextBox, Version=2.16.24.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
+      <HintPath>packages\FCTB.2.16.24\lib\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Windows, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Packages\Windows.winmd</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EV3.Core\BluetoothCommunication.cs" />
+    <Compile Include="EV3.Core\Brick.cs" />
+    <Compile Include="EV3.Core\BrickButtons.cs" />
+    <Compile Include="EV3.Core\BrickChangedEventArgs.cs" />
+    <Compile Include="EV3.Core\Command.cs" />
+    <Compile Include="EV3.Core\DataReceivedEventArgs.cs" />
+    <Compile Include="EV3.Core\DirectCommand.cs" />
+    <Compile Include="EV3.Core\Enums.cs" />
+    <Compile Include="EV3.Core\ICommunication.cs" />
+    <Compile Include="EV3.Core\NetworkCommunication.cs" />
+    <Compile Include="EV3.Core\Port.cs" />
+    <Compile Include="EV3.Core\Response.cs" />
+    <Compile Include="EV3.Core\ResponseManager.cs" />
+    <Compile Include="EV3.Core\SystemCommand.cs" />
+    <Compile Include="LTP.Core\Devices\ConnectionLimitationSettings.cs" />
+    <Compile Include="LTP.Core\Devices\PFxHub.cs" />
+    <Compile Include="LTP.Core\Devices\BuWizzHub.cs" />
+    <Compile Include="LTP.Desktop\Main UI\ConnectionLimit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Main UI\ConnectionLimit.Designer.cs">
+      <DependentUpon>ConnectionLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Main UI\FormWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Main UI\FormWelcome.Designer.cs">
+      <DependentUpon>FormWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Core\Path.cs" />
+    <Compile Include="LTP.Desktop\Program\ToolStripProgram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Program\ToolStripProgram.Designer.cs">
+      <DependentUpon>ToolStripProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Core\Devices\EV3Hub.cs" />
+    <Compile Include="LTP.Core\Devices\RemoteHub.cs" />
+    <Compile Include="LTP.Core\Devices\WedoHub.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\PathEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\PathEditor.Designer.cs">
+      <DependentUpon>PathEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\TrainSectionBehavior.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\TrainSectionBehavior.Designer.cs">
+      <DependentUpon>TrainSectionBehavior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\TrainOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\TrainOptions.Designer.cs">
+      <DependentUpon>TrainOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Core\Sections.cs" />
+    <Compile Include="LTP.Desktop\Main UI\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Main UI\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Hubs UI\HubEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Hubs UI\HubEditor.Designer.cs">
+      <DependentUpon>HubEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Core\Devices\SbrickHub.cs" />
+    <Compile Include="LTP.Core\TrainProject.cs" />
+    <Compile Include="LTP.Desktop\Main UI\FormCodeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Main UI\FormCodeEditor.Designer.cs">
+      <DependentUpon>FormCodeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Core\Devices\Port.cs" />
+    <Compile Include="LTP.Core\Devices\Hub.cs" />
+    <Compile Include="LTP.Desktop\Main UI\MainBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Main UI\MainBoard.Designer.cs">
+      <DependentUpon>MainBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LTP.Core\TrainProgram.cs" />
+    <Compile Include="LTP.Desktop\Hubs UI\HubControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Hubs UI\HubControl.Designer.cs">
+      <DependentUpon>HubControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\SectionsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\SectionsEditor.Designer.cs">
+      <DependentUpon>SectionsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\SwitchSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\SwitchSetup.Designer.cs">
+      <DependentUpon>SwitchSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\SectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\SectionControl.Designer.cs">
+      <DependentUpon>SectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\TrainSectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LTP.Desktop\Sections UI\TrainSectionControl.Designer.cs">
+      <DependentUpon>TrainSectionControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LTP.Desktop\Main UI\ConnectionLimit.resx">
+      <DependentUpon>ConnectionLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Main UI\FormWelcome.resx">
+      <DependentUpon>FormWelcome.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Main UI\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Hubs UI\HubEditor.resx">
+      <DependentUpon>HubEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Main UI\FormCodeEditor.resx">
+      <DependentUpon>FormCodeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Main UI\MainBoard.resx">
+      <DependentUpon>MainBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Hubs UI\HubControl.resx">
+      <DependentUpon>HubControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Program\ToolStripProgram.resx">
+      <DependentUpon>ToolStripProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\PathEditor.resx">
+      <DependentUpon>PathEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\SectionsEditor.resx">
+      <DependentUpon>SectionsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\TrainSectionBehavior.resx">
+      <DependentUpon>TrainSectionBehavior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\SwitchSetup.resx">
+      <DependentUpon>SwitchSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\SectionControl.resx">
+      <DependentUpon>SectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\TrainOptions.resx">
+      <DependentUpon>TrainOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTP.Desktop\Sections UI\TrainSectionControl.resx">
+      <DependentUpon>TrainSectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\icons8-code-48.png" />
+    <EmbeddedResource Include="Resources\icons8-eye-48.png" />
+    <EmbeddedResource Include="Resources\icons8-light-48.png" />
+    <EmbeddedResource Include="Resources\icons8-motion-sensor-48.png" />
+    <EmbeddedResource Include="Resources\icons8-plus-48.png" />
+    <EmbeddedResource Include="Resources\icons8-private-48.png" />
+    <EmbeddedResource Include="Resources\icons8-railway-station-48.png" />
+    <EmbeddedResource Include="Resources\icons8-source-code-48.png" />
+    <EmbeddedResource Include="Resources\icons8-stop-train-48.png" />
+    <EmbeddedResource Include="Resources\icons8-train-48.png" />
+    <EmbeddedResource Include="Resources\icons8-train-track-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wi-fi-off-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-start-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-stop-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-can-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-next-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clear-train-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-tracks-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tracks-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-map-pinpoint-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-map-pinpoint-96-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-navigator-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marker-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-place-marker-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-navigator-del-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-navigator-plus-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-window-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-play-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-services-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-services-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-cyam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-lblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checked-48-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-xbox-a-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-xbox-b-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bluetooth-2-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bluetooth-red--2-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2019-02-09_17-51-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-light-automation-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-speaker-48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
