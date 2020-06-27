@@ -153,3 +153,9 @@ Major update with this version:
 - Fix Hub not showing up on certain configurations
 - Add 'State' variable to each hubs
  
+Credits
+-------
+
+This software uses a couple other awesome open source code:
+ - FastColoredTextBox: https://github.com/PavelTorgashov/FastColoredTextBox
+ - Lego EV3 Library: https://github.com/BrianPeek/legoev3
