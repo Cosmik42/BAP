@@ -5,7 +5,7 @@ Welcome to "The Brick Automation Project" V1.5!
 This software is free and developped for the community of AFOL!
 I am extremely grateful to the following people for their kind donation.
 
-Top Donnors:
+Top Donors:
  - David G.
  - Markus W.
  - Jacek H. 
